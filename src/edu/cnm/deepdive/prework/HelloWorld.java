@@ -5,11 +5,13 @@ import java.lang.annotation.Target;
 public class HelloWorld {
 
   public static void main(String[] args) {
-    salute((args.length > 0) ? args[0]: "World");
+    salute(salutation(args));
     }
-
-    private static void salute(String target) {
-    System.out.println("Hello, " + target + "!");
+    private static String salutation(String[] args){
+     return "Hello, " + ((args.length > 0) ? args[0]: "World");
+    }
+    private static void salute(String salutaion) {
+    System.out.println(salutaion);
   }
 }
 
